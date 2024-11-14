@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 class="my-4">Categorías</h2>
+    <ul class="list-group mb-4">
+        <li *ngFor="let categoria of categorias"
+            class="list-group-item d-flex justify-content-between align-items-center">
+            {{ categoria.nombreCategoria }}
+            <div>
+                <button class="btn btn-warning btn-sm mr-2" (click)="editarCategoria(categoria)">Editar</button>
+                <button class="btn btn-danger btn-sm"
+                    (click)="eliminarCategoria(categoria.idCategoria)">Eliminar</button>
+            </div>
+        </li>
+    </ul>
+
+    <h3 class="my-4">{{ categoriaEditando ? 'Editar Categoría' : 'Agregar Nueva Categoría' }}</h3>
+    <form (ngSubmit)="agregarCategoria()" class="form-inline">
+        <div class="form-group mb-2">
+            <label for="nombre" class="sr-only">Nombre:</label>
+            <input type="text" id="nombre" [(ngModel)]="nombreCategoria" name="nombreCategoria" class="form-control"
+                placeholder="Nombre" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2 ml-2">{{ categoriaEditando ? 'Guardar Cambios' : 'Agregar'
+            }}</button>
+        <button *ngIf="categoriaEditando" type="button" class="btn btn-secondary mb-2 ml-2"
+            (click)="cancelarEdicion()">Cancelar</button>
+    </form>
+</div>

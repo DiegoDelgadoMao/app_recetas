@@ -1,0 +1,353 @@
+{
+    "info": {
+        "name": "Basetareas API",
+        "description": "Colección de endpoints CRUD para Basetareas",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Categorias",
+            "item": [
+                {
+                    "name": "Obtener todas las categorias",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/categorias",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "categorias"]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener una categoria por ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/categorias/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "categorias", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear una categoria",
+                    "request": {
+                        "method": "POST",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombreCategoria\": \"Nueva Categoria\",\n    \"fechaCreacion\": \"2024-11-01\",\n    \"fechaActualizacion\": \"2024-11-01\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/categorias",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "categorias"]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar una categoria",
+                    "request": {
+                        "method": "PUT",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombreCategoria\": \"Categoria Actualizada\",\n    \"fechaActualizacion\": \"2024-11-02\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/categorias/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "categorias", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar una categoria",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/categorias/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "categorias", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Ingredientes",
+            "item": [
+                {
+                    "name": "Obtener todos los ingredientes",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/ingredientes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "ingredientes"]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener un ingrediente por ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/ingredientes/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "ingredientes", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear un ingrediente",
+                    "request": {
+                        "method": "POST",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombreIngrediente\": \"Tomate\",\n    \"fechaCreacion\": \"2024-11-01\",\n    \"fechaActualizacion\": \"2024-11-01\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/ingredientes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "ingredientes"]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar un ingrediente",
+                    "request": {
+                        "method": "PUT",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombreIngrediente\": \"Cebolla\",\n    \"fechaActualizacion\": \"2024-11-02\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/ingredientes/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "ingredientes", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar un ingrediente",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/ingredientes/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "ingredientes", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Recetas",
+            "item": [
+                {
+                    "name": "Obtener todas las recetas",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas"]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener una receta por ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear una receta",
+                    "request": {
+                        "method": "POST",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombreReceta\": \"Spaghetti al Pomodoro\",\n    \"categoria\": { \"idCategoria\": 1 },\n    \"instrucciones\": \"Cocinar la pasta y mezclar con la salsa de tomate\",\n    \"fechaCreacion\": \"2024-11-01\",\n    \"fechaActualizacion\": \"2024-11-01\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas"]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar una receta",
+                    "request": {
+                        "method": "PUT",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombreReceta\": \"Spaghetti Carbonara\",\n    \"categoria\": { \"idCategoria\": 1 },\n    \"instrucciones\": \"Cocinar la pasta y mezclar con salsa carbonara\",\n    \"fechaActualizacion\": \"2024-11-02\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar una receta",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "RecetasIngredientes",
+            "item": [
+                {
+                    "name": "Obtener todas las relaciones receta-ingrediente",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas-ingredientes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas-ingredientes"]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener una relación receta-ingrediente por ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas-ingredientes/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas-ingredientes", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear una relación receta-ingrediente",
+                    "request": {
+                        "method": "POST",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"receta\": { \"idReceta\": 1 },\n    \"ingrediente\": { \"idIngrediente\": 1 },\n    \"cantidad\": \"200g\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas-ingredientes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas-ingredientes"]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar una relación receta-ingrediente",
+                    "request": {
+                        "method": "PUT",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"receta\": { \"idReceta\": 1 },\n    \"ingrediente\": { \"idIngrediente\": 2 },\n    \"cantidad\": \"150g\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas-ingredientes/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas-ingredientes", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar una relación receta-ingrediente",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/api/recetas-ingredientes/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "9000",
+                            "path": ["api", "recetas-ingredientes", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 class="my-4">Ingredientes</h2>
+    <ul class="list-group mb-4">
+        <li *ngFor="let ingrediente of ingredientes"
+            class="list-group-item d-flex justify-content-between align-items-center">
+            {{ ingrediente.nombreIngrediente }}
+            <div>
+                <button class="btn btn-warning btn-sm mr-2" (click)="editarIngrediente(ingrediente)">Editar</button>
+                <button class="btn btn-danger btn-sm"
+                    (click)="eliminarIngrediente(ingrediente.idIngrediente)">Eliminar</button>
+            </div>
+        </li>
+    </ul>
+
+    <h3 class="my-4">{{ ingredienteEditando ? 'Editar Ingrediente' : 'Agregar Nuevo Ingrediente' }}</h3>
+    <form (ngSubmit)="agregarIngrediente()" class="form-inline">
+        <div class="form-group mb-2">
+            <label for="nombre" class="sr-only">Nombre:</label>
+            <input type="text" id="nombre" [(ngModel)]="nombreIngrediente" name="nombreIngrediente" class="form-control"
+                placeholder="Nombre" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2 ml-2">{{ ingredienteEditando ? 'Guardar Cambios' : 'Agregar'
+            }}</button>
+        <button *ngIf="ingredienteEditando" type="button" class="btn btn-secondary mb-2 ml-2"
+            (click)="cancelarEdicion()">Cancelar</button>
+    </form>
+</div>
